@@ -19,7 +19,7 @@ namespace roundhouse.databases.oracle.orm
             Id(x => x.id).Column("id").GeneratedBy.Sequence(ApplicationParameters.CurrentMappings.roundhouse_schema_name + "_" + ApplicationParameters.CurrentMappings.scripts_run_table_name + "id").UnsavedValue(0);
             Map(x => x.version_id);
             Map(x => x.script_name);
-            Map(x => x.text_of_script).CustomSqlType("Clob");
+            Map(x => x.text_of_script).CustomType("AnsiString").CustomSqlType("Clob");
             Map(x => x.text_hash).Length(512);
             Map(x => x.one_time_script);
 
