@@ -196,6 +196,8 @@ namespace roundhouse.databases.oracle
                         id
                         ,repository_path
                         ,version
+                        ,entry_date
+                        ,modified_date
                         ,entered_by
                     )
                     VALUES
@@ -203,6 +205,8 @@ namespace roundhouse.databases.oracle
                         {0}_{1}id.NEXTVAL
                         ,:repository_path
                         ,:repository_version
+                        ,sysdate
+                        ,sysdate
                         ,:user_name
                     )
                 ",
